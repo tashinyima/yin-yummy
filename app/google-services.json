@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "562352422062",
+    "project_id": "yin-yummy",
+    "storage_bucket": "yin-yummy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562352422062:android:108991a37b3e3b038b813f",
+        "android_client_info": {
+          "package_name": "com.example.yinyummy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562352422062-487edleauqfdaumvn1kgmub9574fu7il.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7kY3ZmD8gAS8e8EkNd-7v63f_43aPVgY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562352422062-487edleauqfdaumvn1kgmub9574fu7il.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
