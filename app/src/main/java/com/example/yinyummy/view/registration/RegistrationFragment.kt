@@ -1,4 +1,4 @@
-package com.example.yinyummy.view.login
+package com.example.yinyummy.view.registration
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,11 +8,12 @@ import android.view.ViewGroup
 import com.example.yinyummy.R
 
 
-class LoginFragment : Fragment() {
+class RegistrationFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
+
         }
     }
 
@@ -21,7 +22,7 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        return inflater.inflate(R.layout.fragment_registration, container, false)
     }
 
 
