@@ -6,4 +6,15 @@
     <string name="order">My Order</string>
     <string name="favourite">Favourite</string>
     <string name="account">Profile</string>
+    <string name="btn_register">Register</string>
+    <string name="btn_login">Login</string>
+    <string name="givenName">Given Name</string>
+    <string name="familyName">Family Name</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="retypePassword">Re-type Password</string>
+    <string name="register_have_acc">
+        <font color="#000000">Already Registered? | </font><font color="#0000FF"><b>Login</b></font>
+    </string>
 </resources>
