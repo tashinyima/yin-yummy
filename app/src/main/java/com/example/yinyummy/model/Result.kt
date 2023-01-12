@@ -2,87 +2,84 @@ package com.example.yinyummy.model
 
 
 import androidx.room.Entity
+import androidx.room.Ignore
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity (tableName = "result")
 data class Result(
+
     @SerializedName("aggregateLikes")
-    val aggregateLikes: Int,
+    val aggregateLikes: Int?,
     @SerializedName("cheap")
-    val cheap: Boolean,
+    val cheap: Boolean?,
     @SerializedName("cookingMinutes")
-    val cookingMinutes: Int,
+    val cookingMinutes: Int?,
     @SerializedName("creditsText")
-    val creditsText: String,
-    @SerializedName("cuisines")
-    val cuisines: List<String>,
+    val creditsText: String?,
     @SerializedName("dairyFree")
-    val dairyFree: Boolean,
-    @SerializedName("diets")
-    val diets: List<String>,
-    @SerializedName("dishTypes")
-    val dishTypes: List<String>,
-    @SerializedName("extendedIngredients")
-    val extendedIngredients: List<ExtendedIngredient>,
+    val dairyFree: Boolean?,
     @SerializedName("gaps")
-    val gaps: String,
+    val gaps: String?,
     @SerializedName("glutenFree")
-    val glutenFree: Boolean,
+    val glutenFree: Boolean?,
     @SerializedName("healthScore")
-    val healthScore: Int,
+    val healthScore: Int?,
     @SerializedName("id")
+    @PrimaryKey
     val id: Int,
     @SerializedName("image")
-    val image: String,
+    val image: String?,
     @SerializedName("imageType")
-    val imageType: String,
+    val imageType: String?,
     @SerializedName("license")
-    val license: String,
+    val license: String?,
     @SerializedName("likes")
-    val likes: Int,
+    val likes: Int?,
     @SerializedName("missedIngredientCount")
-    val missedIngredientCount: Int,
-    @SerializedName("missedIngredients")
-    val missedIngredients: List<MissedIngredient>,
-    @SerializedName("occasions")
-    val occasions: List<Any>,
+    val missedIngredientCount: Int?,
     @SerializedName("preparationMinutes")
-    val preparationMinutes: Int,
+    val preparationMinutes: Int?,
     @SerializedName("pricePerServing")
-    val pricePerServing: Double,
+    val pricePerServing: Double?,
     @SerializedName("readyInMinutes")
-    val readyInMinutes: Int,
+    val readyInMinutes: Int?,
     @SerializedName("servings")
-    val servings: Int,
+    val servings: Int?,
     @SerializedName("sourceName")
-    val sourceName: String,
+    val sourceName: String?,
     @SerializedName("sourceUrl")
-    val sourceUrl: String,
+    val sourceUrl: String?,
     @SerializedName("spoonacularSourceUrl")
-    val spoonacularSourceUrl: String,
+    val spoonacularSourceUrl: String?,
     @SerializedName("summary")
-    val summary: String,
+    val summary: String?,
     @SerializedName("sustainable")
-    val sustainable: Boolean,
+    val sustainable: Boolean?,
     @SerializedName("title")
-    val title: String,
-    @SerializedName("unusedIngredients")
-    val unusedIngredients: List<Any>,
+    val title: String?,
     @SerializedName("usedIngredientCount")
-    val usedIngredientCount: Int,
-    @SerializedName("usedIngredients")
-    val usedIngredients: List<Any>,
+    val usedIngredientCount: Int?,
     @SerializedName("vegan")
-    val vegan: Boolean,
+    val vegan: Boolean?,
     @SerializedName("vegetarian")
-    val vegetarian: Boolean,
+    val vegetarian: Boolean?,
     @SerializedName("veryHealthy")
-    val veryHealthy: Boolean,
+    val veryHealthy: Boolean?,
     @SerializedName("veryPopular")
-    val veryPopular: Boolean,
+    val veryPopular: Boolean?,
     @SerializedName("weightWatcherSmartPoints")
-    val weightWatcherSmartPoints: Int
+    val weightWatcherSmartPoints: Int?
 ) {
 
+
+
+    @SerializedName("extendedIngredients")
+    @Ignore
+    val extendedIngredients: List<ExtendedIngredient> ?=null
+
+    @SerializedName("missedIngredients")
+    @Ignore
+    val missedIngredients: List<MissedIngredient> ? = null
 
 }

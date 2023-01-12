@@ -1,31 +1,38 @@
 package com.example.yinyummy.model
 
 
+import androidx.room.Dao
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "missedIngredient")
 data class MissedIngredient(
     @SerializedName("aisle")
-    val aisle: String,
+    val aisle: String?,
     @SerializedName("amount")
-    val amount: Double,
+    val amount: Double?,
     @SerializedName("extendedName")
-    val extendedName: String,
+    val extendedName: String?,
     @SerializedName("id")
+    @PrimaryKey
     val id: Int,
     @SerializedName("image")
-    val image: String,
-    @SerializedName("meta")
-    val meta: List<String>,
+    val image: String?,
     @SerializedName("name")
-    val name: String,
+    val name: String?,
     @SerializedName("original")
-    val original: String,
+    val original: String?,
     @SerializedName("originalName")
-    val originalName: String,
+    val originalName: String?,
     @SerializedName("unit")
-    val unit: String,
+    val unit: String?,
     @SerializedName("unitLong")
-    val unitLong: String,
+    val unitLong: String?,
     @SerializedName("unitShort")
-    val unitShort: String
-)
+    val unitShort: String?,
+    @SerializedName("result_id")
+    var resultId : Int?
+) {
+
+}
