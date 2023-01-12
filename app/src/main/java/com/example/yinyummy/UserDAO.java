@@ -5,7 +5,7 @@ import androidx.room.Insert;
 
 @Dao
 public interface UserDAO {
-    @Insert
-    fun 
+
+
 
 }
