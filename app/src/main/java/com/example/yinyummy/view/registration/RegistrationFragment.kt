@@ -23,14 +23,7 @@ class RegistrationFragment : Fragment() {
         arguments?.let {
 
         }
-        _binding = FragmentRegistrationBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        binding.btnRegister.setOnClickListener {
-            startActivity(Intent(this, LoginFragment::class.java))
-        }
-        binding.txtHaveAcc.setOnClickListener {
-            startActivity(Intent(this, LoginFragment::class.java))
-        }
+
     }
 
     override fun onCreateView(
@@ -40,6 +33,34 @@ class RegistrationFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentRegistrationBinding.inflate(layoutInflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.btnRegister.setOnClickListener {
+
+            /*
+            1: first validate the fields.
+            2: store in firebase
+            3: then store in local db
+             */
+
+            getRegistrationFields()
+
+        }
+        binding.txtHaveAcc.setOnClickListener {
+            initAlreadyHaveAccount()
+        }
+
+    }
+
+    private fun getRegistrationFields() {
+
+    }
+
+    private fun initAlreadyHaveAccount() {
+        // redirect to the login page..
+
     }
 
 
