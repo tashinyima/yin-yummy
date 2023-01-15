@@ -7,7 +7,7 @@
     <string name="order">Order</string>
     <string name="favourite">Favourite</string>
     <string name="account">Profile</string>
-<!-- registration -->
+    <!-- registration -->
 
     <string name="btn_register">Register</string>
     <string name="btn_login">Login</string>
@@ -16,15 +16,31 @@
     <string name="email">Email</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="retypePassword">Re-type Password</string>
+    <string name="retypePassword">Re type Password</string>
     <string name="register_have_acc">
-        <font color="#000000">Already Registered? | </font><font color="#0000FF"><b>Login</b></font>
+        <font color="#000000">Already Registered?  </font><font color="#0000FF"><b>Login</b></font>
     </string>
 
-    <string name="searchfood">Search food here</string>
+    <string name="searchFood">Search food here</string>
     <string name="popularchoice">Popular Choice</string>
     <string name="foodname">Pork Fried and Vegetables</string>
     <string name="foodrating">9.6</string>
     <string name="add">Add</string>
+    <string name="yin">Yin</string>
+    <string name="and">And</string>
+    <string name="yummy">Yummy</string>
+    <string name="create_new_acc">
+        <font color="#000000">Don t Have An Account Yet? | </font><font color="#0000FF"><b>Register</b></font>
+    </string>
+    <string name="forgetPassword">Forget Password?</string>
+    <string name="title_activity_start">StartActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 </resources>

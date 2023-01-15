@@ -6,6 +6,7 @@ import com.example.yinyummy.data.database.FoodRoomDatabase
 import com.example.yinyummy.data.database.dao.ExtendedIngredientDao
 import com.example.yinyummy.data.database.dao.MissedIngredientDao
 import com.example.yinyummy.data.database.dao.ResultDao
+import com.example.yinyummy.data.database.dao.UserDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -45,5 +46,11 @@ object RoomModule {
     @Provides
     fun provideMissedIngredientDao(database: FoodRoomDatabase): MissedIngredientDao {
         return database.missedIngredientDao()
+    }
+
+    @Singleton
+    @Provides
+    fun provideUserDao(database: FoodRoomDatabase):UserDao {
+        return database.userDao()
     }
 }
