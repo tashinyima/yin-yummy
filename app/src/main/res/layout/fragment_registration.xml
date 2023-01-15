@@ -27,17 +27,17 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/icon_familyName"
+            android:id="@+id/tv_yin"
             android:layout_width="330dp"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
             android:hint="@string/familyName"
-            app:startIconDrawable="@drawable/ic_cricle_account"
+            app:startIconDrawable="@drawable/ic_circle_account"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/logo">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txt_familyName"
+                android:id="@+id/et_familyName"
                 android:layout_width="330dp"
                 android:layout_height="50dp"
                 tools:layout_editor_absoluteX="-3dp"
@@ -45,17 +45,17 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/icon_givenName"
+            android:id="@+id/tv_and"
             android:layout_width="330dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:hint="@string/givenName"
-            app:startIconDrawable="@drawable/ic_cricle_account"
+            app:startIconDrawable="@drawable/ic_circle_account"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/icon_familyName">
+            app:layout_constraintTop_toBottomOf="@+id/tv_yin">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txt_givenName"
+                android:id="@+id/et_givenName"
                 android:layout_width="330dp"
                 android:layout_height="50dp"
                 tools:layout_editor_absoluteX="-3dp"
@@ -71,9 +71,9 @@
             app:startIconDrawable="@drawable/ic_email"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/icon_givenName">
+            app:layout_constraintTop_toBottomOf="@+id/tv_and">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txt_email"
+                android:id="@+id/et_email"
                 android:layout_width="330dp"
                 android:layout_height="50dp"
                 tools:layout_editor_absoluteX="-3dp"
@@ -86,12 +86,12 @@
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:hint="@string/username"
-            app:startIconDrawable="@drawable/ic_cricle_account"
+            app:startIconDrawable="@drawable/ic_circle_account"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/icon_email">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txt_username"
+                android:id="@+id/et_username"
                 android:layout_width="330dp"
                 android:layout_height="50dp"
                 tools:layout_editor_absoluteX="-3dp"
@@ -109,7 +109,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/icon_username">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txt_password"
+                android:id="@+id/et_password"
                 android:layout_width="330dp"
                 android:layout_height="50dp"
                 tools:layout_editor_absoluteX="-3dp"
@@ -127,7 +127,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/icon_password">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txt_retypePassword"
+                android:id="@+id/et_retypePassword"
                 android:layout_width="330dp"
                 android:layout_height="50dp"
                 tools:layout_editor_absoluteX="-3dp"
@@ -138,7 +138,7 @@
             android:id="@+id/btn_register"
             android:layout_width="330dp"
             android:layout_height="50dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/icon_retypePassword"

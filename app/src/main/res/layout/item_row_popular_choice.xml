@@ -1,88 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
-    android:elevation="20dp"
-    app:cardCornerRadius="15dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="result"
+            type="com.example.yinyummy.model.Result" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:elevation="20dp"
+        app:cardCornerRadius="15dp">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/img_meal"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/food_pork_fried"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-
-        <TextView
-            android:id="@+id/tv_food_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="10dp"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:text="@string/foodname"
-            app:layout_constraintStart_toEndOf="@+id/img_meal"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_food_rating"
-            android:textSize="15sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/foodrating"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tv_food_title"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_food_region"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mexican"
-            app:layout_constraintStart_toStartOf="@+id/tv_food_title"
-            app:layout_constraintTop_toBottomOf="@+id/tv_food_title" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_meal"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:scaleType="centerCrop"
+                loadCircleImage="@{result.image}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-        <TextView
-            android:id="@+id/tv_food_calories"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Calories: 230"
-            app:layout_constraintStart_toEndOf="@+id/tv_food_region"
-            app:layout_constraintTop_toBottomOf="@+id/tv_food_title" />
+            <TextView
+                android:id="@+id/tv_food_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="@{result.title}"
+                app:layout_constraintStart_toEndOf="@+id/img_meal"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_food_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Price: $9.0"
-            app:layout_constraintStart_toStartOf="@+id/tv_food_title"
-            app:layout_constraintTop_toBottomOf="@+id/tv_food_region" />
+            <TextView
+                android:id="@+id/tv_food_rating"
+                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                convertDoubleToText="@{result.pricePerServing}"
+                android:text="@string/foodrating"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_food_title"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_order"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/add"
-            android:background ="@drawable/rounded_btn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tv_food_title"
-            app:layout_constraintTop_toBottomOf="@+id/tv_food_price" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tv_food_region"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{result.sourceName}"
+                app:layout_constraintStart_toStartOf="@+id/tv_food_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_food_title" />
 
 
-</com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:id="@+id/tv_food_calories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Calories: 230"
+                app:layout_constraintStart_toEndOf="@+id/tv_food_region"
+                app:layout_constraintTop_toBottomOf="@+id/tv_food_title" />
+
+            <TextView
+                android:id="@+id/tv_food_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                convertDoubleToText="@{result.pricePerServing}"
+                app:layout_constraintStart_toStartOf="@+id/tv_food_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_food_region" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add"
+                android:background="@drawable/rounded_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_food_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_food_price" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

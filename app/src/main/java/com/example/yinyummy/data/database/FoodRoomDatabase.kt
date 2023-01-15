@@ -6,10 +6,11 @@ import com.example.yinyummy.data.database.FoodRoomDatabase.Companion.DATABASE_VE
 import com.example.yinyummy.data.database.dao.ExtendedIngredientDao
 import com.example.yinyummy.data.database.dao.MissedIngredientDao
 import com.example.yinyummy.data.database.dao.ResultDao
+import com.example.yinyummy.data.database.dao.UserDao
 import com.example.yinyummy.model.ExtendedIngredient
 import com.example.yinyummy.model.MissedIngredient
 import com.example.yinyummy.model.Result
-
+import com.example.yinyummy.model.User
 
 
 @Database(
@@ -17,18 +18,21 @@ import com.example.yinyummy.model.Result
     entities = [
         Result::class,
         ExtendedIngredient::class,
-        MissedIngredient::class
+        MissedIngredient::class,
+        User::class
+
     ],
     version = DATABASE_VERSION,
     exportSchema = false
 )
-abstract class FoodRoomDatabase  :RoomDatabase(){
+abstract class FoodRoomDatabase : RoomDatabase() {
     abstract fun resultDao(): ResultDao
     abstract fun extendedIngredientDao(): ExtendedIngredientDao
     abstract fun missedIngredientDao(): MissedIngredientDao
+    abstract fun userDao(): UserDao
 
     companion object {
-        const val DATABASE_VERSION = 1
+        const val DATABASE_VERSION = 2
         const val DATABASE_NAME = "yin_yummy_db"
 
     }
