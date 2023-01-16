@@ -15,10 +15,13 @@ import androidx.navigation.fragment.findNavController
 import com.example.yinyummy.MainActivity
 import com.example.yinyummy.R
 import com.example.yinyummy.databinding.FragmentLoginBinding
+import com.example.yinyummy.utils.RegisterValidation
 import com.example.yinyummy.utils.Resource
 import com.example.yinyummy.viewmodel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
@@ -31,21 +34,19 @@ class LoginFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
+
         }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentLoginBinding.inflate(layoutInflater)
         binding.tvRegister.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
         }
-//        binding.btnLogin.setOnClickListener {
-//            val intent = Intent(activity, MainActivity::class.java)
-//            startActivity(intent)
-//        }
+
         return binding.root
     }
 
@@ -57,30 +58,65 @@ class LoginFragment : Fragment() {
             btnLogin.setOnClickListener {
                 val email = etEmail.text.toString().trim()
                 val password = etPassword.text.toString()
-                viewModel.login(email,password)
+                viewModel.login(email, password)
 
             }
         }
 
         lifecycleScope.launchWhenStarted {
 
-            viewModel.login.collect{
-                when(it){
+            viewModel.login.collect {
+                when (it) {
                     is Resource.Loading -> {
 
                     }
                     is Resource.Success -> {
 
-                        Intent(requireActivity(),MainActivity::class.java).also { intent ->
+                        Intent(requireActivity(), MainActivity::class.java).also { intent ->
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
                             startActivity(intent)
 
                         }
                     }
                     is Resource.Error -> {
-                        Toast.makeText(requireContext(),it.message,Toast.LENGTH_SHORT).show()
+
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                            binding.etEmail.apply {
+                                text?.clear()
+                            }
+                            binding.etPassword.apply {
+                                text?.clear()
+                            }
+                        }
+
+
                     }
                     else -> Unit
+                }
+            }
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.validation.collect {
+                if (it.email is RegisterValidation.Failed) {
+                    withContext(Dispatchers.Main) {
+                        binding.etEmail.apply {
+                            requestFocus()
+                            error = it.email.message
+                            text?.clear()
+                        }
+                    }
+                }
+
+                if (it.password is RegisterValidation.Failed) {
+                    withContext(Dispatchers.Main) {
+                        binding.etPassword.apply {
+                            requestFocus()
+                            error = it.password.message
+                            text?.clear()
+                        }
+                    }
                 }
             }
         }
