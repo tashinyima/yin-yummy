@@ -73,7 +73,7 @@
             android:layout_width="330dp"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
-            android:hint="@string/username"
+            android:hint="@string/email"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/icon_email"
@@ -81,10 +81,10 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_email"
+                android:inputType="textEmailAddress"
                 android:layout_width="330dp"
                 android:layout_height="50dp"
-                tools:layout_editor_absoluteX="-3dp"
-                tools:layout_editor_absoluteY="35dp" />
+                android:background="@drawable/rounded_login_edittext_bg"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -100,10 +100,10 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_password"
+                android:inputType="textPassword"
+                android:background="@drawable/rounded_login_edittext_bg"
                 android:layout_width="330dp"
-                android:layout_height="50dp"
-                tools:layout_editor_absoluteX="-3dp"
-                tools:layout_editor_absoluteY="35dp" />
+                android:layout_height="50dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
 

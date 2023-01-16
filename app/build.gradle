@@ -120,4 +120,8 @@ dependencies {
 
     // datastore
     implementation "androidx.datastore:datastore-preferences:1.0.0"
+
+//     animated loading button
+//    implementation "br.com.simplepass:loading-button-android:2.2.0"
+
 }
