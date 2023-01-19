@@ -6,4 +6,10 @@
     <string name="order">My Order</string>
     <string name="favourite">Favourite</string>
     <string name="account">Profile</string>
+
+<!--    Profile Page-->
+    <string name="btn_logout">Logout</string>
+    <string name="profile_h1">Profile</string>
+    <string name="ord_his">Order History:</string>
+
 </resources>
