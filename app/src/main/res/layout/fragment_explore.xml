@@ -8,52 +8,87 @@
 
     </data>
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
         tools:context=".view.ExploreFragment">
 
-
         <LinearLayout
-
-            android:id="@+id/linearLayout"
+            android:id="@+id/topAddress_linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_margin="10dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/searchBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/search_box_bg">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/tv_search"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="20dp"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:text="@string/searchFood"
-                    android:textColor="#919394"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_img"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/profile_img"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/img_search"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_marginEnd="20dp"
-                    android:src="@drawable/ic_search_plain"
+                    android:id="@+id/img_locationIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="5dp"
+                    android:src="@drawable/ic_location"
+                    app:layout_constraintStart_toEndOf="@+id/profile_img"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_deliveryTo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/delivery_to"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/et_address_delivery"
+                    app:layout_constraintStart_toEndOf="@id/img_locationIcon"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+
+                    android:id="@+id/et_address_delivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/location"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_locationIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_deliveryTo" />
+
+                <ImageView
+                    android:id="@+id/img_notificationBell"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_notification"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/img_shopping_bag"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/img_shopping_bag"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_shopping_bag"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -61,64 +96,154 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <View
-                android:layout_width="10dp"
-                android:layout_height="match_parent" />
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profileImage"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/profile_img"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
         </LinearLayout>
 
 
-        <TextView
-            android:id="@+id/tv_popularChoice"
+        <LinearLayout
+
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/popularchoice"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:background="@drawable/search_box_bg"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/topAddress_linearLayout">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/searchBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+
+                <ImageView
+                    android:id="@+id/img_search"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="5dp"
+                    android:src="@drawable/ic_search_plain"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/searchFood"
+                    android:textColor="#919394"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_search"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@color/teal_200" />
+
+            <ImageView
+                android:id="@+id/filterImage"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/filter_option"
+                app:tint="@color/teal_200" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout_categories"
+            android:layout_width="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/tv_popularChoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/categories"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_seeAll"
+                    android:text="@string/see_all"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/popular_rv"
+            android:id="@+id/rv_categories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:itemCount="3"
-            app:layout_constraintTop_toBottomOf="@+id/tv_popularChoice"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout_categories"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_row_categories" />
+
+        <TextView
+            android:id="@+id/tv_popular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Popular Meals"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_categories" />
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_popularChoice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_popular"
             tools:listitem="@layout/item_row_popular_choice" />
 
-        <TextView
-            android:id="@+id/tv_starter"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:text="Starter"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@+id/popular_rv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/starter_rv"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_starter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:listitem="@layout/item_row_popular_choice"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 </layout>

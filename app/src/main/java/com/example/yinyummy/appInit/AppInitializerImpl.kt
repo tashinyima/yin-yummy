@@ -36,7 +36,7 @@ class AppInitializerImpl @Inject constructor(
 
     private fun applyGetAllQueries(): HashMap<String, String> {
         var queries: HashMap<String, String> = HashMap()
-        queries["number"] = "50"
+        queries["number"] = "20"
         queries["apiKey"] = API_KEY
         queries["addRecipeInformation"] = "true"
         queries["fillIngredients"] = "true"

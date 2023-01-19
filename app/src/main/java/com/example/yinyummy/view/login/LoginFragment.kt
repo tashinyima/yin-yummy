@@ -90,7 +90,6 @@ class LoginFragment : Fragment() {
                             }
                         }
 
-
                     }
                     else -> Unit
                 }
