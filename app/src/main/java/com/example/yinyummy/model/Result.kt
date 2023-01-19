@@ -72,8 +72,6 @@ data class Result(
     val weightWatcherSmartPoints: Int?
 ) {
 
-
-
     @SerializedName("extendedIngredients")
     @Ignore
     val extendedIngredients: List<ExtendedIngredient> ?=null
