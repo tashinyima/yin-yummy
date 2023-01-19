@@ -4,27 +4,27 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.yinyummy.databinding.ItemRowCategoriesBinding
-import com.example.yinyummy.databinding.ItemRowPopularChoiceBinding
+import com.example.yinyummy.model.Categories
 import com.example.yinyummy.model.Result
 
-class ExploreAdapter(private val resultList: ArrayList<Result>) :
-    RecyclerView.Adapter<ExploreAdapter.ExploreViewHolder>() {
+class ExploreCategoryAdapter(private val categoryList: ArrayList<Categories>) :
+    RecyclerView.Adapter<ExploreCategoryAdapter.ExploreViewHolder>() {
 
-    var onItemClick: ((Result) -> Unit) ?=null
+    var onItemClick: ((Categories) -> Unit) ?=null
 
-    fun updateResult(newResult: List<Result>){
-        resultList.clear()
-        resultList.addAll(newResult)
+    fun updateResult(newCategories: List<Categories>){
+        categoryList.clear()
+        categoryList.addAll(newCategories)
         // need to change notifydata changed
         notifyDataSetChanged()
     }
 
 
-    inner class ExploreViewHolder(private val binding: ItemRowPopularChoiceBinding) :
+    inner class ExploreViewHolder(private val binding: ItemRowCategoriesBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-            fun bind(result: Result){
-                binding.result = result
+            fun bind(categories: Categories){
+                binding.categories = categories
                 binding.executePendingBindings()
             }
 
@@ -33,21 +33,21 @@ class ExploreAdapter(private val resultList: ArrayList<Result>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExploreViewHolder {
 
-        val binding = ItemRowPopularChoiceBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding = ItemRowCategoriesBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ExploreViewHolder(binding)
 
     }
 
     override fun onBindViewHolder(holder: ExploreViewHolder, position: Int) {
 
-        holder.bind(resultList[position])
+        holder.bind(categoryList[position])
         holder.itemView.setOnClickListener{
-            onItemClick?.invoke(resultList[position])
+            onItemClick?.invoke(categoryList[position])
         }
     }
 
     override fun getItemCount(): Int {
 
-        return resultList.size
+        return categoryList.size
     }
 }

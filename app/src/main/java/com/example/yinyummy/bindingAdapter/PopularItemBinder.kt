@@ -7,9 +7,11 @@ import com.example.yinyummy.extensions.loadCircleImage
 import com.example.yinyummy.extensions.loadImage
 import de.hdodenhof.circleimageview.CircleImageView
 
-class PopularItemBinder {
-    companion object {
 
+
+class PopularItemBinder {
+
+    companion object {
         @BindingAdapter("loadImage")
         @JvmStatic
         fun loadImage(imgView: ImageView, url: String) {
