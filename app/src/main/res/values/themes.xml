@@ -15,7 +15,6 @@
     </style>
 
 
-
     <style name="popUpTheme" parent="Theme.MaterialComponents.DayNight">
 
         <item name="android:colorBackground">#ffffff</item>
@@ -28,9 +27,20 @@
         <item name="android:textSize">15sp</item>
     </style>
 
+
     <style name="RedButton">
         <item name="android:background">@drawable/bg_red_button</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">15sp</item>
     </style>
+
+    <style name="Theme.YinYummy.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.YinYummy.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.YinYummy.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>

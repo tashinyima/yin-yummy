@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="result"
+            type="com.example.yinyummy.model.Result" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:elevation="20dp"
+        app:cardCornerRadius="15dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_meal"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                loadCircleImage="@{result.image}"
+                android:src="@drawable/food_pork_fried"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tv_food_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="@{result.title}"
+                app:layout_constraintStart_toEndOf="@+id/img_meal"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+            <TextView
+                android:id="@+id/tv_food_region"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                convertIntToText="@{result.healthScore}"
+                app:layout_constraintStart_toStartOf="@+id/tv_food_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_food_title" />
+
+
+            <TextView
+                android:id="@+id/tv_food_calories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                convertIntToText="@{result.healthScore}"
+                app:layout_constraintStart_toEndOf="@+id/tv_food_region"
+                app:layout_constraintTop_toBottomOf="@+id/tv_food_title" />
+
+            <TextView
+                android:id="@+id/tv_food_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                convertDoubleToText="@{result.pricePerServing}"
+                app:layout_constraintStart_toStartOf="@+id/tv_food_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_food_region" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:text="@string/add"
+                android:background="@drawable/rounded_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_food_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_food_price" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
